@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXY.CO (Private) Limited</title>
+    <!-- Premium Global Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DESIGN CORE & THEME CONFIGURATION */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --bg-primary: #0B0F17;     /* Sleek Obsidian Black */
+            --bg-surface: #131A26;     /* Dark Charcoal Card Fill */
+            --accent-glow: #3B82F6;    /* Premium Electric Blue */
+            --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            --text-heading: #FFFFFF;
+            --text-body: #94A3B8;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION HEADER */
+        header {
+            background-color: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 1.2rem 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-logo span {
+            color: var(--accent-glow);
+        }
+
+        nav a {
+            color: var(--text-body);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-heading);
+        }
+
+        /* HERO PROJECTION LAYER */
+        .hero-banner {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10rem 2rem 5rem 2rem;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.08), transparent 60%);
+        }
+
+        .hero-inner h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 4rem;
+            color: var(--text-heading);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero-inner p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-body);
+        }
+
+        .action-btn {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 25px rgba(59, 130, 246, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(59, 130, 246, 0.5);
+        }
+
+        /* CORPORATE SECTIONS UTILITY */
+        .content-section {
+            padding: 7rem 8%;
+        }
+
+        .section-header {
+            text-align: center;
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 2.4rem;
+            color: var(--text-heading);
+            margin-bottom: 4rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* COMPLIANCE REGISTRY GRID */
+        .registry-panel {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 3.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .registry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .meta-node {
+            border-left: 2px solid var(--accent-glow);
+            padding-left: 1.5rem;
+        }
+
+        .meta-node label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-body);
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+        }
+
+        .meta-node p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        .duns-tag {
+            display: inline-block;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #93C5FD;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .source-reference {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+            color: rgba(148, 163, 184, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* BUSINESS CAPABILITIES GRID */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .capability-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .capability-card:hover {
+            border-color: rgba(59, 130, 246, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .capability-card h3 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-heading);
+        }
+
+        .capability-card p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+        }
+
+        /* ENTERPRISE FOOTER */
+        footer {
+            background-color: #070A10;
+            border-top: 1px solid var(--border-subtle);
+            padding: 5rem 8% 2.5rem 8%;
+            font-size: 0.9rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand-summary {
+            max-width: 450px;
+        }
+
+        .footer-brand-summary h3 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            color: var(--text-heading);
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2rem;
+            color: rgba(148, 163, 184, 0.5);
+        }
+
+        /* RESPONSIBLE ECOSYSTEM MEDIA BREAKS */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.2rem;
+                padding: 1.5rem 5%;
+            }
+            nav a {
+                margin: 0 1rem;
+            }
+            .hero-banner {
+                padding-top: 12rem;
+            }
+            .hero-inner h1 {
+                font-size: 2.6rem;
+            }
+            .content-section {
+                padding: 4rem 5%;
+            }
+            .registry-panel {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CORPORATE HEADER NAVBAR -->
+    <header>
+        <div class="brand-logo">TXY.CO<span>.</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#compliance">Corporate Profile</a>
+            <a href="#operations">Capabilities</a>
+        </nav>
+    </header>
+
+    <!-- HERO PRESENTATION MODULE -->
+    <section id="home" class="hero-banner">
+        <div class="hero-inner">
+            <h1>TXY.CO (PRIVATE) LIMITED</h1>
+            <p>Architecting next-generation business paradigms, advanced corporate structures, and premium tech-driven global frameworks.</p>
+            <a href="#compliance" class="action-btn">Corporate Specifications</a>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE & INCORPORATION VALUES -->
+    <section id="compliance" class="content-section">
+        <h2 class="section-header">Verified Regulatory Profile</h2>
+        <div class="registry-panel">
+            <div class="registry-grid">
+                <div class="meta-node">
+                    <label>Legal Corporate Entity</label>
+                    <p>TXY.CO (PRIVATE) LIMITED</p>
+                </div>
+                <div class="meta-node">
+                    <label>Incorporate / DUNS Number</label>
+                    <p><span class="duns-tag">850407459</span></p>
+                </div>
+                <div class="meta-node">
+                    <label>Assigned Tax Office</label>
+                    <p>CRO Islamabad, Pakistan</p>
+                </div>
+                <div class="meta-node">
+                    <label>Registered Base Address</label>
+                    <p style="font-weight: 400; font-size: 1rem;">Office No. 1902 Tower-A Islamabad, 44000 Pakistan</p>
+                </div>
+                <div class="meta-node">
+                    <label>Incorporation Date</label>
+                    <p>04-April-2024</p>
+                </div>
+                <div class="meta-node">
+                    <label>Corporate Classification</label>
+                    <p>Private Limited Company</p>
+                </div>
+            </div>
+            
+            <!-- Link/Audit reference to the file TYXCO.jpeg -->
+            <div class="source-reference">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                Data verified via official FBR Registration Certificate record asset: <strong>TYXCO.jpeg</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / CAPABILITIES STRATUM -->
+    <section id="operations" class="content-section" style="border-top: 1px solid var(--border-subtle);">
+        <h2 class="section-header">Core Capabilities</h2>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <h3>Enterprise Strategy</h3>
+                <p>Developing high-level corporate frameworks, regulatory integration setups, and optimized commercial workflows tailored for scale.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Technology Ecosystems</h3>
+                <p>Architecting secure high-bandwidth systems and centralized digital operations that align with contemporary internet safety laws.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Operational Scaling</h3>
+                <p>Deploying specialized resource asset maps and advanced pipeline mechanisms designed to sustain peak transactional efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM REAR TERMINAL FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand-summary">
+                <h3>TXY.CO</h3>
+                <p>A legally unified private limited enterprise structured to execute high-value digital solutions, transparent operations, and rigorous compliance metrics.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--text-heading); margin-bottom: 1.2rem; font-weight: 600;">Headquarters Jurisdiction</h4>
+                <p>Tower-A, Blue Area / Constitution Ave</p>
+                <p>Islamabad Capital Territory, Pakistan</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TXY.CO (Private) Limited. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
